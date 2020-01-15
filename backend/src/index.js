@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const routes = require('./routes');
+
 
 const app = express();
 
@@ -9,13 +11,8 @@ mongoose.connect('mongodb+srv://daniloTadeu:daniloTadeu@cluster0-au39i.mongodb.n
 });
 
 app.use(express.json());
+app.use(routes);
 
 //Métedo http: get, post, put, delete
-
-
-app.post('/users/:id',  (req, res) => {
-    console.log(req.body);
-    return res.json({ message: 'olá'});
-});
 
 app.listen(3300);
