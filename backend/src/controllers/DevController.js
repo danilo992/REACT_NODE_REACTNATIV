@@ -1,5 +1,6 @@
 const axios = require('axios');
 const Dev = require('../models/Dev');
+const parseStringAsArray = require('../utils/parseStringAsArray');
 
 module.exports = {
     async index(req, res) {
@@ -20,6 +21,8 @@ module.exports = {
         //if(!name) {
         //    name = apiRes.data.login;
         //}
+
+        const techsArray = parseStringAsArray(techs);
     
         const techsArray = techs.split(',').map(tech => tech.trim());
     
