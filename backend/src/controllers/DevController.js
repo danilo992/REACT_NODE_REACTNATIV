@@ -22,9 +22,9 @@ module.exports = {
         //    name = apiRes.data.login;
         //}
 
-        const techsArray = parseStringAsArray(techs);
+       // const techsArray = parseStringAsArray(techs);
     
-        const techsArray = techs.split(',').map(tech => tech.trim());
+       // const techsArray = techs.split(',').map(tech => tech.trim());
     
         const location = {
             type: 'Point',
@@ -36,7 +36,7 @@ module.exports = {
             name,
             avatar_url,
             bio,
-            techs: techsArray,
+            techs, // techsArray,
             location,
         });
         }
