@@ -1,6 +1,6 @@
 const axios = require('axios');
 const Dev = require('../models/Dev');
-const parseStringAsArray = require('../utils/parseStringAsArray');
+//const parseStringAsArray = require('../utils/parseStringAsArray');
 
 module.exports = {
     async index(req, res) {
@@ -10,7 +10,7 @@ module.exports = {
     },
 
     async store (req, res) {
-        const { github_username, techs, latitude, longitude } = req.body
+        const { github_username, techsArray, latitude, longitude } = req.body
 
         let dev = await Dev.findOne({ github_username });
 
@@ -36,7 +36,7 @@ module.exports = {
             name,
             avatar_url,
             bio,
-            techs, // techsArray,
+            techs: techsArray,
             location,
         });
         }
